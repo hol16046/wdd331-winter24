@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/*Variables*/
+//colors
+$dark: #333;
+$mid: #666;
+$light: #d0d0d0;
+//breakpoints
+$break-small: 350px;
+$break-large: 768px;
+
+/*Mixins*/
+@mixin border-bottom() {
+    border-bottom: 2px solid $light;
+}
+@mixin border-top() {
+    border-top: 2px solid $light;
+}
+@mixin border-left() {
+    border-left: 2px solid $light;
+}
+
+
+
+
+
+@media only screen and (min-width: $break-small) {
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: $dark;
+        font-size: 18px;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        font-family: 'Lora', serif;
+    }
+    h1 { 
+        text-align: center;
+        a {
+            &:link, &:visited, &:hover, &:active {
+                color: $dark;
+                font-size: 4.5rem;
+                text-decoration: none;
+                padding: 10px
+            }
+        }
+    }
+    nav ul {
+        list-style-type: none;
+        font-family: 'Lora', serif;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0;
+        font-size: 22px;
+        margin: 10px;
+    }
+    nav {
+        @include border-top;
+        @include border-bottom;
+    }
+    nav ul li:nth-child(2) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    a {
+        color: $mid;
+        text-decoration: none;
+        &:hover {
+            color: #00ddff;
+        }
+        &:active {
+            color: #DEB887;
+        }
+    }
+    .post-date {
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        text-align: right;
+        padding: 35px 10px 10px;
+        @include border-bottom;
+    }
+    h2 {
+        font-size: 1.75rem;
+        padding: 5px 10px;
+    }
+    figure{ 
+        padding: 0 0 0 20px;
+    }
+    img {
+       max-width: 240px;
+    }
+    p {
+        padding: 0 15px;
+    }
+}
+
+@media only screen and (min-width: $break-large) {
+    body {
+        margin: 0 20px;
+    }
+    nav ul {
+        text-align: right;
+    }
+    nav ul li {
+        display: inline;
+        margin-left: 20px;
+    }
+    main { 
+        margin: 20px 0;
+    }
+    article {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .post-date {
+        border-bottom: none;
+        flex: 2 1 0;
+        align-self: start;
+        padding: 15px;
+        font-size: 1.8rem;
+    }
+    .post-content {
+        @include border-left;
+        flex: 7 1 0;
+        @include border-bottom;
+        padding-bottom: 20px;
+    }
+    figure {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    h2 {
+        font-size: 1.85rem;
+        padding: 13px 0 0 15px;
+    }
+    img{ 
+        max-width: 300px;
+    }
+}
