@@ -20,7 +20,7 @@ const links = [{
         url: 'week05/24_responsive/responsive-WORKING.html'
     },
     {
-        label: "It's a Trap!",
+        label: "It's a Trap! (CSS Animation)",
         url: 'https://codepen.io/hol16046/pen/zYbeNqG'
     },
     {
