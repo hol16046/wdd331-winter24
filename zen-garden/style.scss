@@ -1,7 +1,7 @@
 @use "variables" as *; //this puts all the variables in the global namespace.
-// @use 'atoms';
-//@use 'molecules';
-//@use 'organisms' as o;
+@use 'atoms';
+@use 'molecules';
+@use 'organisms' as o;
 
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@200;400&family=Roboto+Condensed&display=swap');
 
@@ -10,15 +10,46 @@
   box-sizing: border-box;
 }
 html {
-  background-color: $background-color;
-  padding: 5%;
+  height: 100%;
+  min-height: 100%;
+  background-color: #161A2C;
+  background-image: url(svg-assets/night-background.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+
 body {
+  height: 100%;
+  background-image: linear-gradient(#FD746C, transparent 90%);
+  background-size: 100%;
+  mix-blend-mode: difference;
+  padding: 5%;
+  margin: 0;
+}
+
+.page-wrapper {
   font-family: $fonts-body;
   font-size: 85%;
-  color: $text-dark;
-  background-color: $primary;
+  background-color: $primary-faded;
   margin: 0;
   padding: 1em;
+  display: grid;
+  position: relative;
+  z-index: 3;
+  &::before {
+    content: '';
+    @include atoms.star-template($numStarThreeStars, 1px, $starThreeScrollDuration);
+  }
+  &::after {
+    content: '';
+    @include atoms.star-template($numStarTwoStars, 1px, $starTwoScrollDuration);
+  }
+}
+
+@media (min-width: 400px) {
+  .page-wrapper {
+    padding: 2em;
+  }
 }
