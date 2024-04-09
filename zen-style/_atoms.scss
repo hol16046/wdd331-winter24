@@ -18,7 +18,7 @@
   text-transform: uppercase;
   color: $color;
 }
-@mixin divider($color: $accent1) {
+@mixin divider($color: $accent3) {
   border-top: 2px solid $color;
   margin-top: 1em;
 }
@@ -66,11 +66,11 @@ p {
 }
 
 a {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid $accent1;
   color: $text-dark;
   text-decoration: none;
   transition: border-color 0.2s ease-in-out;
 }
 a:hover {
-  border-color: $accent1;
+  border-bottom: 2px solid $accent1;
 }
